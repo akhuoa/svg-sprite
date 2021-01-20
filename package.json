@@ -1,14 +1,24 @@
 {
-  "name": "svg-sprite",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@abi-software/svg-sprite",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name svg-sprite ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "./dist/svg-sprite.common.js",
+  "files": [
+    "assets/*",
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
+    "svg-inline-loader": "^0.8.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {

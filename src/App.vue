@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <svg-sprite/>
+    <div>
+      Image
+    </div>
+    <img alt="Vue logo" src="@/../assets/logo.png">
+    <div>
+      SVG Icon
+    </div>
+    <svg-icon icon="noun-filter" class="example-icon"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SvgSprite from './components/SvgSprite.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SvgSprite
   }
 }
 </script>
@@ -24,5 +31,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.example-icon{
+  font-size: 30em;
 }
 </style>
