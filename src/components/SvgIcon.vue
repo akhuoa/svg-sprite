@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 svg.icon {
   fill: currentColor;
   height: 1em;
