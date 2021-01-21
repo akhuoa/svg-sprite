@@ -8,18 +8,15 @@
     <div>
       SVG Icon
     </div>
-    <svg-icon icon="noun-filter" class="example-icon"/>
+    <svg-icon icon="fullScreen" class="example-icon"/>
   </div>
 </template>
 
 <script>
-import SvgSprite from './components/SvgSprite.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    SvgSprite
-  }
 }
 </script>
 
@@ -34,5 +31,6 @@ export default {
 }
 .example-icon{
   font-size: 30em;
+  color: red;
 }
 </style>

@@ -4,6 +4,6 @@ import SvgSprite from './SvgSprite.vue'
 import SvgIcon from './SvgIcon.vue'
 
 export {
-  SvgIcon,
-  SvgSprite
+  SvgSprite,
+  SvgIcon
 };

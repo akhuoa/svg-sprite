@@ -24,6 +24,7 @@ const symbols = svgContext.keys().map(path => {
 })
 export default {
   name: 'SvgSprite',
+  svgContext: svgContext,
   svgSprite: symbols.join('\n'), // concatenate all symbols into $options.svgSprite
 }
 </script>
