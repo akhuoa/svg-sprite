@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <svg-sprite/>
     <svg-sprite-color/>
     <div>
       Image
@@ -10,7 +9,7 @@
       SVG Icons
     </div>
     changeBckgd<svg-icon icon="changeBckgd" class="example-icon"/>
-    close<svg-icon icon="close-icon" class="example-icon"/>
+    close<svg-icon icon="close" class="example-icon"/>
     closeFullScreen<svg-icon icon="closeFullScreen" class="example-icon"/>
     dock<svg-icon icon="dock" class="example-icon"/>
     pause<svg-icon icon="pause" class="example-icon"/>
@@ -26,11 +25,10 @@
 
 <script>
 import SvgSpriteColor from './components/SvgSpriteColor.vue'
-import SvgSprite from './components/SvgSprite'
 
 
 export default {
-  components: { SvgSpriteColor, SvgSprite },
+  components: { SvgSpriteColor, },
   name: 'App',
 }
 </script>
