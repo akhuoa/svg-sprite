@@ -20,6 +20,11 @@
     undock<svg-icon icon="undock" class="example-icon"/>
     zoomIn<svg-icon icon="zoomIn" class="example-icon"/>
     zoomOut<svg-icon icon="zoomOut" class="example-icon"/>
+    singlepanel<svg-icon icon="singlepanel" class="example-icon"/>
+    2horpanel<svg-icon icon="2horpanel" class="example-icon"/>
+    2vertpanel<svg-icon icon="2vertpanel" class="example-icon"/>
+    3panel<svg-icon icon="3panel" class="example-icon"/>
+    4panel<svg-icon icon="4panel" class="example-icon"/>
   </div>
 </template>
 
