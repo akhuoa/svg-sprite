@@ -25,6 +25,7 @@
     2vertpanel<svg-icon icon="2vertpanel" class="example-icon"/>
     3panel<svg-icon icon="3panel" class="example-icon"/>
     4panel<svg-icon icon="4panel" class="example-icon"/>
+    fitWindow<svg-icon icon="fitWindow" class="example-icon"/>
   </div>
 </template>
 
