@@ -23,7 +23,7 @@ const symbols = svgContext.keys().map(path => {
   return content.replace('<svg', `<symbol id="${id}"`).replace('svg>', 'symbol>')
 })
 export default {
-  name: 'SvgSprite',
+  name: 'MapSvgSprite',
   svgContext: svgContext,
   svgSprite: symbols.join('\n'), // concatenate all symbols into $options.svgSprite
 }

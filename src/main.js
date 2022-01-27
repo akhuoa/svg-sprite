@@ -4,9 +4,9 @@ import SvgIcon from './components/SvgIcon.vue'
 import SvgSprite from './components/SvgSprite.vue'
 import SvgSpriteColor from './components/SvgSpriteColor.vue'
 
-Vue.component('svg-icon', SvgIcon)
-Vue.component('svg-sprite', SvgSprite)
-Vue.component('svg-sprite-color', SvgSpriteColor)
+Vue.component('map-svg-icon', SvgIcon)
+Vue.component('map-svg-sprite', SvgSprite)
+Vue.component('map-svg-sprite-color', SvgSpriteColor)
 Vue.config.productionTip = false
 
 new Vue({

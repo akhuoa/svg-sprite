@@ -1,14 +1,14 @@
 <!-- SvgIcon.vue -->
 
 <template>
-  <svg class="icon" :class="{ 'icon-spin': spin }">
+  <svg class="map-icon" :class="{ 'map-icon-spin': spin }">
     <use :xlink:href="`#${icon}`" />
   </svg>
 </template>
 
 <script>
 export default {
-  name: 'SvgIcon',
+  name: 'MapSvgIcon',
   props: {
     icon: {
       type: String,
@@ -23,17 +23,17 @@ export default {
 </script>
 
 <style scoped>
-svg.icon {
+svg.map-icon {
   fill: currentColor;
   height: 1em;
   margin-bottom: 0.125em;
   vertical-align: middle;
   width: 1em;
 }
-svg.icon-spin {
+svg.map-icon-spin {
   animation: icon-spin 2s infinite linear;
 }
-@keyframes icon-spin {
+@keyframes abi-icon-spin {
   from {
     transform: rotate(0deg);
   }
