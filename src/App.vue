@@ -8,6 +8,7 @@
     <div>
       SVG Icons
     </div>
+    magnifyingGlass<map-svg-icon icon="magnifyingGlass" class="example-icon"/>
     changeBckgd<map-svg-icon icon="changeBckgd" class="example-icon"/>
     close<map-svg-icon icon="close" class="example-icon"/>
     closeFullScreen<map-svg-icon icon="closeFullScreen" class="example-icon"/>
