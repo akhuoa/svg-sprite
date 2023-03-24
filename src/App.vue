@@ -52,7 +52,7 @@ export default {
 }
 .example-icon{
   font-size: 30em;
-  color: #8300BF;
+  color: #00467F;
 }
 
 </style>

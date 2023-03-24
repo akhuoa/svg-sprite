@@ -3,7 +3,7 @@
     <title>play</title>
     <g id="play" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group-9">
-            <g id="Group-5-Copy" fill="#8300BF">
+            <g id="Group-5-Copy" fill="currentColor">
                 <circle id="Oval-Copy" cx="12" cy="12" r="12"></circle>
             </g>
             <polygon id="Triangle" fill="#FFFFFF" class="st0" transform="translate(13.000000, 11.500000) rotate(-270.000000) translate(-13.000000, -11.500000) " points="13 8 19 15 7 15"></polygon>
