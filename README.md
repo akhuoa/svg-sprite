@@ -48,6 +48,14 @@ import {SvgIcon} from '@abi-software/svg-sprite';
 Vue.component('svg-icon', SvgIcon);
 ``` 
 
+### Change the icon colours
+```
+<style>
+.map-icon {
+  color: red;
+}
+</style>
+``` 
 
 ## Project setup
 ```

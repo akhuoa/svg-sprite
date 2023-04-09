@@ -52,7 +52,10 @@ export default {
 }
 .example-icon{
   font-size: 30em;
-  color: #00467F;
+}
+
+.map-icon {
+  color: red;
 }
 
 </style>
