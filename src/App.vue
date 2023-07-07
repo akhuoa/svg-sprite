@@ -28,6 +28,7 @@
     4panel<map-svg-icon icon="4panel" class="example-icon"/>
     fitWindow<map-svg-icon icon="fitWindow" class="example-icon"/>
     Help<map-svg-icon icon="help" class="example-icon"/>
+    openMap<map-svg-icon icon="openMap" class="example-icon"/>
   </div>
 </template>
 
