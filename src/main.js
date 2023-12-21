@@ -1,14 +1,13 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import SvgIcon from './components/SvgIcon.vue'
 import SvgSprite from './components/SvgSprite.vue'
 import SvgSpriteColor from './components/SvgSpriteColor.vue'
 
-Vue.component('map-svg-icon', SvgIcon)
-Vue.component('map-svg-sprite', SvgSprite)
-Vue.component('map-svg-sprite-color', SvgSpriteColor)
-Vue.config.productionTip = false
+const app = createApp(App)
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+app.component('map-svg-icon', SvgIcon)
+app.component('map-svg-sprite', SvgSprite)
+app.component('map-svg-sprite-color', SvgSpriteColor)
+
+app.mount('#app')
