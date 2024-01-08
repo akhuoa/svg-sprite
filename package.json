@@ -4,10 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
+    "preview": "vite preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
   },
-  "main": "./dist/svg-sprite.common.js",
   "files": [
     "assets/*",
     "dist/*",
@@ -16,13 +15,22 @@
     "*.json",
     "*.js"
   ],
+  "main": "./dist/svg-sprite.umd.js",
+  "module": "./dist/svg-sprite.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/svg-sprite.es.js",
+      "require": "./dist/svg-sprite.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "dependencies": {
-    "vue": "^3.1.0"
+    "vue": "^3.3.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.6.1",
-    "@vue/compiler-sfc": "^3.1.0",
-    "eslint-plugin-vue": "^8.0.1",
-    "vite": "^2.5.4"
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vue/compiler-sfc": "^3.3.13",
+    "eslint-plugin-vue": "^9.19.2",
+    "vite": "^5.0.10"
   }
 }

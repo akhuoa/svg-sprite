@@ -6,8 +6,8 @@ import SvgSpriteColor from './components/SvgSpriteColor.vue'
 
 const app = createApp(App)
 
-app.component('map-svg-icon', SvgIcon)
-app.component('map-svg-sprite', SvgSprite)
-app.component('map-svg-sprite-color', SvgSpriteColor)
+app.component('MapSvgIcon', SvgIcon)
+app.component('MapSvgSprite', SvgSprite)
+app.component('MapSvgSpriteColor', SvgSpriteColor)
 
 app.mount('#app')
