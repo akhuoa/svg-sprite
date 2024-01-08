@@ -16,10 +16,10 @@
     "*.js"
   ],
   "main": "./dist/svg-sprite.umd.js",
-  "module": "./dist/svg-sprite.es.js",
+  "module": "./dist/svg-sprite.mjs",
   "exports": {
     ".": {
-      "import": "./dist/svg-sprite.es.js",
+      "import": "./dist/svg-sprite.mjs",
       "require": "./dist/svg-sprite.umd.js"
     },
     "./dist/style.css": "./dist/style.css"

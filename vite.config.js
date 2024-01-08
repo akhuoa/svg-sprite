@@ -18,7 +18,7 @@ export default defineConfig({
         lib: {
             entry: resolve(__dirname, "src/components/index.js"),
             name: "SvgSprite",
-            fileName: (format) => `svg-sprite.${format}.js`,
+            fileName: 'svg-sprite',
         },
         rollupOptions: {
             external: ["vue"],
