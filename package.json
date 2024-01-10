@@ -15,12 +15,13 @@
     "*.json",
     "*.js"
   ],
-  "main": "./dist/svg-sprite.umd.js",
-  "module": "./dist/svg-sprite.mjs",
+  "type": "module",
+  "main": "./dist/svg-sprite.umd.cjs",
+  "module": "./dist/svg-sprite.js",
   "exports": {
     ".": {
-      "import": "./dist/svg-sprite.mjs",
-      "require": "./dist/svg-sprite.umd.js"
+      "import": "./dist/svg-sprite.js",
+      "require": "./dist/svg-sprite.umd.cjs"
     },
     "./dist/style.css": "./dist/style.css"
   },

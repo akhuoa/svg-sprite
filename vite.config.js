@@ -1,4 +1,3 @@
-import { fileURLToPath, URL } from 'node:url'
 import { resolve } from "node:path"
 
 import { defineConfig } from 'vite'
@@ -11,12 +10,12 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
+            '@': resolve(__dirname, './src'),
         }
     },
     build: {
         lib: {
-            entry: resolve(__dirname, "src/components/index.js"),
+            entry: resolve(__dirname, "./src/components/index.js"),
             name: "SvgSprite",
             fileName: 'svg-sprite',
         },
