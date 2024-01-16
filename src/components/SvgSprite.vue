@@ -9,7 +9,7 @@ import { removeTagsAndAttrs, cleanUpSvgContext } from './SvgHelpers.js'
 
 const removeTags = true
 const removeSVGTagAttrs = true
-const removingTagAttrs = ['fill'] // Removes attributes from inside the svg tag. Removes width and height by default.
+const removingTagAttrs = ['fill']
 const svgContext = import.meta.glob("@/../assets/icons/*.svg", {
   as: "raw",
   eager: true,
