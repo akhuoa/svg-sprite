@@ -2,10 +2,15 @@
   "name": "@abi-software/svg-sprite",
   "version": "0.4.0-vue3-beta.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "serve": "vite",
+    "build-bundle": "vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "changelog": "auto-changelog -p --output CHANGELOG.md --template keepachangelog",
+    "version": "npm run build-bundle;npm run changelog; git add CHANGELOG.md",
+    "release:beta": "npm version prerelease --preid=beta; npm publish --tag beta",
+    "release:minor": "npm version minor; npm publish",
+    "release:patch": "npm version patch;  npm publish"
   },
   "files": [
     "assets/*",
