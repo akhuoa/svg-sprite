@@ -1,26 +1,22 @@
 <!-- SvgIcon.vue -->
+<script setup name="MapSvgIcon">
+const props = defineProps({
+  icon: {
+    type: String,
+    required: true,
+  },
+  spin: {
+    type: Boolean,
+    default: false,
+  },
+})
+</script>
 
 <template>
   <svg class="map-icon" :class="{ 'map-icon-spin': spin }">
     <use :xlink:href="`#${icon}`" />
   </svg>
 </template>
-
-<script>
-export default {
-  name: 'MapSvgIcon',
-  props: {
-    icon: {
-      type: String,
-      required: true,
-    },
-    spin: {
-      type: Boolean,
-      default: false,
-    },
-  },
-}
-</script>
 
 <style scoped>
 svg.map-icon {
@@ -30,15 +26,17 @@ svg.map-icon {
   vertical-align: middle;
   width: 1em;
 }
+
 svg.map-icon-spin {
   animation: icon-spin 2s infinite linear;
 }
+
 @keyframes abi-icon-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(359deg);
   }
-}
-</style>
+}</style>

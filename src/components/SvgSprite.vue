@@ -1,27 +1,27 @@
 <!-- SvgSprite.vue -->
 
 <template>
-  <svg width="0" height="0" style="display: none;" v-html="$options.svgSprite" />
+  <svg width="0" height="0" style="display: none;" v-html="$options.svgSprite"></svg>
 </template>
 
 <script>
-const svgContext = require.context(
-  '!svg-inline-loader?' + 
-  'removeTags=true' + // remove title tags, etc.
-  '&removeSVGTagAttrs=true' + // enable removing attributes
-  '&removingTagAttrs=fill' + // remove fill attributes
-  '!@/../assets/icons', // search this directory
-  true, // search subdirectories
-  /\w+\.svg$/i // only include SVG files
-)
-const symbols = svgContext.keys().map(path => {
+import { removeTagsAndAttrs, cleanUpSvgContext } from './SvgHelpers.js'
+
+const removeTags = true
+const removeSVGTagAttrs = true
+const removingTagAttrs = ['fill']
+const svgContext = import.meta.glob("@/../assets/icons/*.svg", {
+  as: "raw",
+  eager: true,
+});
+const symbols = Object.keys(svgContext).map((path) => {
   // get SVG file content
-  const content = svgContext(path)
-   // extract icon id from filename
-  const id = path.replace(/^\.\/(.*)\.\w+$/, '$1')
+  const content = removeTagsAndAttrs(svgContext[path], removeTags, removeSVGTagAttrs, removingTagAttrs)
+  // extract icon id from filename
+  const id = path.replace(/^.+\/(\w+).svg$/, "$1")
   // replace svg tags with symbol tags and id attribute
-  return content.replace('<svg', `<symbol id="${id}"`).replace('svg>', 'symbol>')
-})
+  return cleanUpSvgContext(content).replace('<svg', `<symbol id="${id}"`).replace('svg>', 'symbol>')
+});
 export default {
   name: 'MapSvgSprite',
   svgContext: svgContext,
