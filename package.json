@@ -1,6 +1,6 @@
 {
   "name": "@abi-software/svg-sprite",
-  "version": "0.4.0-vue3-beta.0",
+  "version": "0.4.0-vue3.2",
   "scripts": {
     "serve": "vite",
     "build-bundle": "vite build",

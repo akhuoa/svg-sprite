@@ -37,6 +37,11 @@ console.log(MapSvgIcon);
     fitWindow<MapSvgIcon icon="fitWindow" class="example-icon" />
     Help<MapSvgIcon icon="help" class="example-icon"/>
     openMap<MapSvgIcon icon="openMap" class="example-icon" />
+    drawLine<MapSvgIcon icon="drawLine" class="example-icon" />
+    drawPolygon<MapSvgIcon icon="drawPolygon" class="example-icon" />
+    drawPoint<MapSvgIcon icon="drawPoint" class="example-icon" />
+    drawTrash<MapSvgIcon icon="drawTrash" class="example-icon" />
+    connection<MapSvgIcon icon="connection" class="example-icon" />
   </div>
 </template>
 
