@@ -41,6 +41,7 @@ console.log(MapSvgIcon);
     drawPolygon<MapSvgIcon icon="drawPolygon" class="example-icon" />
     drawPoint<MapSvgIcon icon="drawPoint" class="example-icon" />
     drawTrash<MapSvgIcon icon="drawTrash" class="example-icon" />
+    connection<MapSvgIcon icon="connection" class="example-icon" />
   </div>
 </template>
 
