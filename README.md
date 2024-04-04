@@ -45,7 +45,7 @@ export default {
 /* eslint-disable no-alert, no-console */
 import { MapSvgIcon } from '@abi-software/svg-sprite';
 import "@abi-software/svg-sprite/dist/style.css";
-``` 
+```
 
 ### Change the icon colours
 ```
@@ -54,7 +54,7 @@ import "@abi-software/svg-sprite/dist/style.css";
   color: red;
 }
 </style>
-``` 
+```
 
 ## Customize configuration
 
@@ -70,13 +70,24 @@ npm install
 npm run serve
 ```
 
-### Create bundle for npm and publish 
+### Create bundle for npm and publish
 ```
 npm run build-bundle
-npm publish 
+npm publish
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
 ```
+
+## API Documentation
+
+The API documentation is developed with `vitepress` and `vuese`. Documentation pages are in the `docs` folder.
+
+### To run in local development mode
+```bash
+npm run docs:watch
+```
+
+This will start the documentation server with `vitepress` on port `:5173` and watch the components' changes.

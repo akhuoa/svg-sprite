@@ -10,7 +10,13 @@
     "version": "npm run build-bundle;npm run changelog; git add CHANGELOG.md",
     "release:beta": "npm version prerelease --preid=beta; npm publish --tag beta",
     "release:minor": "npm version minor; npm publish",
-    "release:patch": "npm version patch;  npm publish"
+    "release:patch": "npm version patch;  npm publish",
+    "vuese-gen": "node vuese-generator.js",
+    "vuese-watch": "node vuese-generator.js watch",
+    "docs:dev": "vitepress dev docs",
+    "docs:watch": "concurrently \"npm run vuese-watch\" \"npm run docs:dev\"",
+    "docs:build": "npm run vuese-gen; vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "files": [
     "assets/*",
