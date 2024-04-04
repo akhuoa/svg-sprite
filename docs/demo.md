@@ -1,4 +1,4 @@
-# MapSvgSpriteColor Live Demo
+# MapSvgSprite Live Demo
 
 ## Live Demo
 
@@ -6,6 +6,12 @@
   <div class="demo-map-container-inner">
     <ClientOnly>
       <MapSvgSpriteColor />
+      <p>Magnifying Glass Icon</p>
+      &nbsp;
+      <MapSvgIcon
+        icon="magnifyingGlass"
+      />
+      <MapSvgSprite />
     </ClientOnly>
   </div>
 </div>
@@ -15,7 +21,13 @@ import { defineClientComponent } from "vitepress";
 import "./demo-styles.css";
 
 const MapSvgSpriteColor = defineClientComponent(() => {
-  return import("../src/components/MapSvgSpriteColor.vue");
+  return import("../src/components/SvgSpriteColor.vue");
+})
+const MapSvgIcon = defineClientComponent(() => {
+  return import("../src/components/SvgIcon.vue");
+})
+const MapSvgSprite = defineClientComponent(() => {
+  return import("../src/components/SvgSprite.vue");
 })
 </script>
 
@@ -24,14 +36,17 @@ const MapSvgSpriteColor = defineClientComponent(() => {
 
 ```js-vue
   <div class="your-outer-container">
-    <MapSvgSpriteColor />
+    Magnifying Glass Icon
+    <MapSvgIcon
+      icon="magnifyingGlass"
+    />
   </div>
 
   <script>
-    import { MapSvgSpriteColor } from '@abi-software/svg-sprite';
+    import { MapSvgIcon } from '@abi-software/svg-sprite';
 
     export default {
-      components: { MapSvgSpriteColor }
+      components: { MapSvgIcon }
     }
   </script>
 ```

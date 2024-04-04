@@ -16,7 +16,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       {
         text: 'API Reference',
-        link: '/components/MapSvgSprite'
+        link: '/components/SvgSprite'
       }
     ],
 
@@ -27,7 +27,20 @@ export default defineConfig({
       },
       {
         text: 'API Reference',
-        link: '/components/MapSvgSprite'
+        items: [
+          {
+            text: 'SvgSprite',
+            link: '/components/SvgSprite'
+          },
+          {
+            text: 'SvgSpriteColor',
+            link: '/components/SvgSpriteColor'
+          },
+          {
+            text: 'SvgIcon',
+            link: '/components/SvgIcon'
+          }
+        ]
       },
       {
         text: 'Version',

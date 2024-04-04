@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: API Reference
-      link: /components/MapSvgSprite
+      link: /components/SvgSprite
     - theme: alt
       text: Demo
       link: /demo

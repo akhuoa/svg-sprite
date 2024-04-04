@@ -9,12 +9,13 @@ import fs from 'fs'
 import path from 'path'
 import chokidar from 'chokidar'
 import { parser } from '@vuese/parser'
+import { parseSource } from 'vue-docgen-api'
 import { Render } from '@vuese/markdown-render'
 
 const watchMode = process.argv.find((argv) => argv === 'watch')
 
 const componentsDir = 'src/components'
-const components = ['MapSvgSprite.vue', 'MapSvgSpriteColor.vue', 'MapSvgIcon.vue']
+const components = ['SvgSprite.vue', 'SvgSpriteColor.vue', 'SvgIcon.vue']
 const outputDir = 'docs/components'
 
 function generateMarkdown(file) {
@@ -22,23 +23,45 @@ function generateMarkdown(file) {
   const fileContent = fs.readFileSync(fileWithPath, 'utf-8')
 
   try {
-    const parserResult = parser(fileContent)
-    const r = new Render(parserResult)
-    const renderResult = r.render()
-    const markdownResult = r.renderMarkdown()
-    const markdownContent = markdownResult.content
-    const componentName = path.basename(fileWithPath, '.vue')
+    // const parserResult = parser(fileContent)
+    const parserResult = parseSource(fileContent, fileWithPath)
+    parserResult.then((result) => {
+      const name = result.displayName
+      const desc = result.description
+      const props = result.props || []
 
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir)
-    }
+      // transform props to vuese styles
+      props.forEach((prop) => {
+        prop.name = prop.name
+        prop.type = prop.type.name
+        prop.describe = [prop.description]
+        prop.default = prop.defaultValue ? prop.defaultValue.value.replaceAll('\n', '') : ''
+      })
 
-    fs.writeFile(`${outputDir}/${componentName}.md`, markdownContent, (err) => {
-      if (err) {
-        console.error(`Error writing markdown file for ${componentName}`, err)
-      } else {
-        console.log(`Markdown file for ${componentName} is generated!`)
+      const parseResult = {
+        name: name,
+        componentDesc: {
+          default: [desc]
+        },
+        props: props,
       }
+      const r = new Render(parseResult)
+      const renderResult = r.render()
+      const markdownResult = r.renderMarkdown()
+      const markdownContent = markdownResult.content
+      const componentName = path.basename(fileWithPath, '.vue')
+
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir)
+      }
+
+      fs.writeFile(`${outputDir}/${componentName}.md`, markdownContent, (err) => {
+        if (err) {
+          console.error(`Error writing markdown file for ${componentName}`, err)
+        } else {
+          console.log(`Markdown file for ${componentName} is generated!`)
+        }
+      })
     })
   } catch(e) {
     console.error(e)
