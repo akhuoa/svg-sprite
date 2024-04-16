@@ -1,6 +1,8 @@
 # svg-sprite [![npm version](https://badge.fury.io/js/%40abi-software%2Fsvg-sprite.svg)](https://badge.fury.io/js/%40abi-software%2Fsvg-sprite)
 An npm package used to bundle svg icons into the a Vite-Vue3 build. This is opposed to loading svg's from the server at runtime, which can end up SVGs loading last on a site.
 
+View the a live demo and documentation at: https://abi-software.github.io/svg-sprite/
+
 ## Using svg-sprite
 svg-sprite currently only works for SVGs included in the [assets/icons](https://github.com/ABI-Software/svg-sprite/tree/main/assets/icons) directory
 
