@@ -37,7 +37,7 @@
     "./dist/style.css": "./dist/style.css"
   },
   "dependencies": {
-    "vue": "^3.3.13"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.6.2",
