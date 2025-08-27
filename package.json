@@ -1,6 +1,6 @@
 {
   "name": "@abi-software/svg-sprite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "serve": "vite",
     "build-bundle": "vite build",
