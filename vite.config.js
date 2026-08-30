@@ -10,12 +10,12 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': resolve(__dirname, './src'),
+            '@': resolve(import.meta.dirname, './src'),
         }
     },
     build: {
         lib: {
-            entry: resolve(__dirname, "./src/components/index.js"),
+            entry: resolve(import.meta.dirname, "./src/components/index.js"),
             name: "SvgSprite",
             fileName: 'svg-sprite',
         },
@@ -25,6 +25,11 @@ export default defineConfig({
                 globals: {
                     vue: "Vue",
                 },
+                // keep css output name stable for the "./dist/style.css" export/import paths
+                assetFileNames: (assetInfo) =>
+                  assetInfo.name?.endsWith(".css")
+                    ? "style.css"
+                    : "assets/[name][extname]",
             },
         },
     },

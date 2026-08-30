@@ -17,14 +17,18 @@ export const removeTagsAndAttrs = (content, removeTags, removeSVGTagAttrs, remov
     }
     if (removeSVGTagAttrs) {
         hasNoWidthHeight.map((attr) => {
+          if (tempDivElement.querySelector("svg")) {
             tempDivElement.querySelector("svg").removeAttribute(attr)
+          }
         })
     }
     if (removingTagAttrs) {
         hasNoAttributes.map((attr) => {
             const tagAttrsElements = Object.values(tempDivElement.querySelectorAll(`[${attr}]`))
             tagAttrsElements.map((element) => {
+              if (element) {
                 element.removeAttribute(attr)
+              }
             })
         })
     }
