@@ -1,6 +1,6 @@
 <script setup name="App">
-import MapSvgSpriteColor from './components/SvgSpriteColor.vue'
-import MapSvgIcon from './components/SvgIcon.vue'
+import MapSvgSpriteColor from './components/SvgSpriteColor.vue';
+import MapSvgIcon from './components/SvgIcon.vue';
 
 console.log(MapSvgSpriteColor);
 console.log(MapSvgIcon);

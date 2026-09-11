@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import { removeTagsAndAttrs, cleanUpSvgContext } from './SvgHelpers.js'
+import { removeTagsAndAttrs, cleanUpSvgContext } from './SvgHelpers.js';
 
-const removeTags = true
-const removeSVGTagAttrs = true
+const removeTags = true;
+const removeSVGTagAttrs = true;
 const svgContext = import.meta.glob("@/../assets/icons/*.svg", {
   query: "?raw",
   import: "default",
@@ -16,15 +16,15 @@ const svgContext = import.meta.glob("@/../assets/icons/*.svg", {
 });
 const symbols = Object.keys(svgContext).map((path) => {
   // get SVG file content
-  const content = removeTagsAndAttrs(svgContext[path], removeTags, removeSVGTagAttrs)
+  const content = removeTagsAndAttrs(svgContext[path], removeTags, removeSVGTagAttrs);
   // extract icon id from filename
-  const id = path.replace(/^.+\/(\w+).svg$/, "$1")
+  const id = path.replace(/^.+\/(\w+).svg$/, "$1");
   // replace svg tags with symbol tags and id attribute
-  return cleanUpSvgContext(content).replace('<svg', `<symbol id="${id}"`).replace('svg>', 'symbol>')
+  return cleanUpSvgContext(content).replace('<svg', `<symbol id="${id}"`).replace('svg>', 'symbol>');
 });
 export default {
   name: 'MapSvgSpriteColor',
   svgContext: svgContext,
   svgSprite: symbols.join('\n'), // concatenate all symbols into $options.svgSprite
-}
+};
 </script>
