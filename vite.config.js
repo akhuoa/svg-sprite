@@ -1,4 +1,4 @@
-import { resolve } from "node:path";
+import { resolve } from 'node:path';
 
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -15,21 +15,21 @@ export default defineConfig({
     },
     build: {
         lib: {
-            entry: resolve(import.meta.dirname, "./src/components/index.js"),
-            name: "SvgSprite",
+            entry: resolve(import.meta.dirname, './src/components/index.js'),
+            name: 'SvgSprite',
             fileName: 'svg-sprite',
         },
         rollupOptions: {
-            external: ["vue"],
+            external: ['vue'],
             output: {
                 globals: {
-                    vue: "Vue",
+                    vue: 'Vue',
                 },
                 // keep css output name stable for the "./dist/style.css" export/import paths
                 assetFileNames: (assetInfo) =>
-                  assetInfo.name?.endsWith(".css")
-                    ? "style.css"
-                    : "assets/[name][extname]",
+                  assetInfo.name?.endsWith('.css')
+                    ? 'style.css'
+                    : 'assets/[name][extname]',
             },
         },
     },

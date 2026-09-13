@@ -6,7 +6,7 @@ export const removeTagsAndAttrs = (content, removeTags, removeSVGTagAttrs, remov
     // removingTagAttrs: array
     const hasNoAttributes = removingTagAttrs || []; // Removes attributes from inside the <svg />.
 
-    let tempDivElement = document.createElement("div");
+    let tempDivElement = document.createElement('div');
     tempDivElement.innerHTML = content;
     // Removes specified tags and its children. Specify tags by modifying removingTags array.
     if (removeTags) {
@@ -17,8 +17,8 @@ export const removeTagsAndAttrs = (content, removeTags, removeSVGTagAttrs, remov
     }
     if (removeSVGTagAttrs) {
         hasNoWidthHeight.map((attr) => {
-          if (tempDivElement.querySelector("svg")) {
-            tempDivElement.querySelector("svg").removeAttribute(attr);
+          if (tempDivElement.querySelector('svg')) {
+            tempDivElement.querySelector('svg').removeAttribute(attr);
           }
         });
     }
@@ -40,17 +40,17 @@ export const removeTagsAndAttrs = (content, removeTags, removeSVGTagAttrs, remov
 export const cleanUpSvgContext = (content) => {
     const regexSequences = [
         // Remove XML stuffs and comments
-        [/<\?xml[\s\S]*?>/gi, ""],
-        [/<!doctype[\s\S]*?>/gi, ""],
-        [/<!--.*-->/gi, ""],
+        [/<\?xml[\s\S]*?>/gi, ''],
+        [/<!doctype[\s\S]*?>/gi, ''],
+        [/<!--.*-->/gi, ''],
 
         // SVG XML -> HTML5
-        [/\<([A-Za-z]+)([^\>]*)\/\>/g, "<$1$2></$1>"], // convert self-closing XML SVG nodes to explicitly closed HTML5 SVG nodes
-        [/\s+/g, " "], // replace whitespace sequences with a single space
-        [/\> \</g, "><"], // remove whitespace between tags
+        [/\<([A-Za-z]+)([^\>]*)\/\>/g, '<$1$2></$1>'], // convert self-closing XML SVG nodes to explicitly closed HTML5 SVG nodes
+        [/\s+/g, ' '], // replace whitespace sequences with a single space
+        [/\> \</g, '><'], // remove whitespace between tags
     ];
     const cleanedContext = regexSequences.reduce((prev, regex) => {
-        return "".replace.apply(prev, regex);
+        return ''.replace.apply(prev, regex);
     }, content).trim();
     return cleanedContext;
 };
