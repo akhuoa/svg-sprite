@@ -41,7 +41,7 @@ function generateMarkdown(file) {
       const parseResult = {
         name: name,
         componentDesc: {
-          default: [desc]
+          default: [desc],
         },
         props: props,
       };
@@ -63,7 +63,7 @@ function generateMarkdown(file) {
         }
       });
     });
-  } catch(e) {
+  } catch (e) {
     console.error(e);
   }
 }

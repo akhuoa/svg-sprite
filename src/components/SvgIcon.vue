@@ -45,4 +45,5 @@ svg.map-icon-spin {
   to {
     transform: rotate(359deg);
   }
-}</style>
+}
+</style>

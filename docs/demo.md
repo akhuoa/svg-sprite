@@ -31,7 +31,6 @@ const MapSvgSprite = defineClientComponent(() => {
 })
 </script>
 
-
 ## Code Preview
 
 ```js-vue

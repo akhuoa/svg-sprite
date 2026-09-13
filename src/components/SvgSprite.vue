@@ -1,7 +1,7 @@
 <!-- SvgSprite.vue -->
 
 <template>
-  <svg width="0" height="0" style="display: none;" v-html="$options.svgSprite"></svg>
+  <svg width="0" height="0" style="display: none" v-html="$options.svgSprite"></svg>
 </template>
 
 <script>
@@ -17,11 +17,18 @@ const svgContext = import.meta.glob('@/../assets/icons/*.svg', {
 });
 const symbols = Object.keys(svgContext).map((path) => {
   // get SVG file content
-  const content = removeTagsAndAttrs(svgContext[path], removeTags, removeSVGTagAttrs, removingTagAttrs);
+  const content = removeTagsAndAttrs(
+    svgContext[path],
+    removeTags,
+    removeSVGTagAttrs,
+    removingTagAttrs,
+  );
   // extract icon id from filename
   const id = path.replace(/^.+\/(\w+).svg$/, '$1');
   // replace svg tags with symbol tags and id attribute
-  return cleanUpSvgContext(content).replace('<svg', `<symbol id="${id}"`).replace('svg>', 'symbol>');
+  return cleanUpSvgContext(content)
+    .replace('<svg', `<symbol id="${id}"`)
+    .replace('svg>', 'symbol>');
 });
 export default {
   name: 'MapSvgSprite',

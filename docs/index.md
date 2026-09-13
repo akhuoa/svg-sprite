@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "MapSvgSprite"
-  text: "API documentation"
+  name: 'MapSvgSprite'
+  text: 'API documentation'
   tagline:
   actions:
     - theme: brand
