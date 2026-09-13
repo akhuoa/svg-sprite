@@ -25,7 +25,13 @@ export default [
       },
     },
     rules: {
-      "prettier/prettier": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          singleQuote: true,
+          trailingComma: "all",
+        },
+      ],
       "arrow-body-style": "off",
       "prefer-arrow-callback": "off",
       "no-unused-vars": [
