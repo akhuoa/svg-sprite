@@ -1,6 +1,6 @@
 <!-- SvgIcon.vue -->
 <script setup name="MapSvgIcon">
-const props = defineProps({
+defineProps({
   /**
    * The svg icon to show.
    */
