@@ -1,6 +1,6 @@
 <!-- SvgIcon.vue -->
 <script setup name="MapSvgIcon">
-const props = defineProps({
+defineProps({
   /**
    * The svg icon to show.
    */
@@ -15,7 +15,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-})
+});
 </script>
 
 <template>
@@ -45,4 +45,5 @@ svg.map-icon-spin {
   to {
     transform: rotate(359deg);
   }
-}</style>
+}
+</style>
